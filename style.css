@@ -3,7 +3,6 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #0f1115;
   color: #e5e5e5;
-  letter-spacing: 0.05em;
 }
 
 /* ナビ */
@@ -12,14 +11,17 @@ nav {
   justify-content: center;
   gap: 30px;
   padding: 20px;
-  background: rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #222;
+}
+nav.scrolled {
+  background: #000;
 }
 nav a {
   color: #ccc;
   text-decoration: none;
-  font-size: 14px;
 }
 nav a:hover {
   color: #fff;
@@ -30,14 +32,6 @@ header {
   text-align: center;
   padding: 120px 20px;
 }
-header h1 {
-  font-size: 36px;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-header p {
-  color: #aaa;
-}
 
 /* セクション */
 section {
@@ -45,42 +39,41 @@ section {
   margin: 80px auto;
   padding: 0 20px;
 }
-h2 {
-  border-left: 3px solid #888;
-  padding-left: 10px;
-  font-weight: 300;
-}
 
-/* カード（ガラス風） */
+/* カード */
 .card {
   background: rgba(255,255,255,0.03);
   border: 1px solid #222;
   padding: 25px;
-  margin-top: 20px;
   border-radius: 10px;
-  backdrop-filter: blur(6px);
+  margin-top: 20px;
 }
 
 /* ボタン */
 .btn {
   display: inline-block;
-  margin-top: 15px;
   padding: 12px 24px;
   border: 1px solid #888;
   color: #fff;
   text-decoration: none;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: #fff;
-  color: #000;
 }
 
-/* 物件グリッド */
+/* 物件 */
 .property-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 20px;
+}
+
+/* フェード */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* フッター */
@@ -88,19 +81,10 @@ footer {
   text-align: center;
   padding: 40px;
   border-top: 1px solid #222;
-  color: #777;
 }
 
 /* スマホ */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-  header h1 {
-    font-size: 24px;
-  }
-  .property-grid {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:768px){
+  nav {flex-direction:column;}
+  .property-grid {grid-template-columns:1fr;}
 }
