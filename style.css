@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* ナビ */
+nav {
+  background: #1e2a38;
+  padding: 15px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ヘッダー */
+header {
+  background: #1e2a38;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* セクション */
+section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* カード */
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  background: #1e2a38;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* 物件グリッド */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 画像 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
