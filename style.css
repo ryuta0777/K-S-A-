@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #0f1115;
-  color: #e5e5e5;
+  background: #ffffff;
+  color: #333;
   letter-spacing: 0.05em;
 }
 
@@ -14,25 +14,50 @@ nav {
   padding: 20px;
   position: sticky;
   top: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #ddd;
 }
 nav.scrolled {
-  background: #000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 nav a {
-  color: #ccc;
+  color: #555;
   text-decoration: none;
+  font-weight: bold;
 }
 nav a:hover {
-  color: #fff;
+  color: #0077cc;
 }
 
-/* ヘッダー */
-header {
+/* ヒーロー画像 */
+.hero {
+  position: relative;
+  height: 70vh;
+  background: url("images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 白フィルター */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.6);
+}
+
+/* テキスト */
+.hero-content {
+  position: relative;
   text-align: center;
-  padding: 120px 20px;
+}
+.hero h1 {
+  font-size: 40px;
+}
+.hero p {
+  color: #555;
 }
 
 /* セクション */
@@ -49,20 +74,26 @@ h1, h2 {
 
 /* カード */
 .card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid #222;
+  background: #fff;
+  border: 1px solid #eee;
   padding: 25px;
   border-radius: 10px;
   margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* ボタン */
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  border: 1px solid #888;
-  color: #fff;
+  background: #0077cc;
+  color: white;
   text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #005fa3;
 }
 
 /* フェード */
@@ -80,7 +111,8 @@ h1, h2 {
 footer {
   text-align: center;
   padding: 40px;
-  border-top: 1px solid #222;
+  background: #f5f5f5;
+  color: #777;
 }
 
 /* スマホ */
