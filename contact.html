@@ -1,10 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ｜株式会社K,S,A</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="service.html">SERVICE</a>
+<a href="properties.html">PROPERTY</a>
+<a href="access.html">ACCESS</a>
+<a href="contact.html">CONTACT</a>
+</nav>
+
 <section>
 <h1>お問い合わせ</h1>
 
 <div class="card fade">
-<p>053-461-8101</p>
-<p>ksa-1200@titan.ocn.ne.jp</p>
-<a class="btn" href="GoogleフォームURL">フォーム</a>
+<p>お気軽にお問い合わせください。</p>
+
+<p>
+TEL：053-461-8101<br>
+MAIL：ksa-1200@titan.ocn.ne.jp
+</p>
+
+<a class="btn" href="GoogleフォームURL" target="_blank">
+フォームから問い合わせ
+</a>
+
 </div>
 
 </section>
+
+<footer>© 株式会社K,S,A</footer>
+
+<script>
+const els=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')})});
+els.forEach(el=>obs.observe(el));
+
+window.addEventListener('scroll',()=>{
+const nav=document.querySelector('nav');
+if(window.scrollY>50){nav.classList.add('scrolled')}
+else{nav.classList.remove('scrolled')}
+});
+</script>
+
+</body>
+</html>
