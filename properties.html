@@ -1,13 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物件情報｜株式会社K,S,A</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">ホーム</a>
+<a href="about.html">会社概要</a>
+<a href="service.html">サービス</a>
+<a href="properties.html">物件情報</a>
+<a href="access.html">アクセス</a>
+<a href="contact.html">お問い合わせ</a>
+</nav>
+
 <section>
 <h1>物件情報</h1>
 
-<div class="property-grid">
-
 <div class="card fade">
-<h2>物件名</h2>
-<p>家賃：〇万円</p>
-</div>
-
+<h2>現在準備中</h2>
+<p>
+現在、物件情報は準備中です。<br>
+詳細はお電話またはお問い合わせよりご連絡ください。
+</p>
+<p>TEL：053-461-8101</p>
 </div>
 
 </section>
+
+<footer>© 株式会社K,S,A</footer>
+
+<script>
+const els=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')})});
+els.forEach(el=>obs.observe(el));
+
+window.addEventListener('scroll',()=>{
+const nav=document.querySelector('nav');
+if(window.scrollY>50){nav.classList.add('scrolled')}
+else{nav.classList.remove('scrolled')}
+});
+</script>
+
+</body>
+</html>
