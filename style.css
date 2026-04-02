@@ -5,7 +5,7 @@ body {
   color: #333;
 }
 
-/* ナビ全体 */
+/* ナビ */
 nav {
   display: flex;
   justify-content: space-between;
@@ -18,12 +18,10 @@ nav {
   z-index: 1000;
 }
 
-/* ロゴ */
 .logo {
   font-weight: bold;
 }
 
-/* メニュー */
 .nav-links {
   display: flex;
   gap: 25px;
@@ -66,13 +64,29 @@ nav {
   }
 }
 
-/* その他そのまま */
+/* ヒーロー */
+.hero {
+  height: 70vh;
+  background: url("images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  text-align: center;
+}
+
+/* セクション */
 section {
   max-width: 1000px;
   margin: 80px auto;
   padding: 0 20px;
 }
 
+/* カード */
 .card {
   background: #fff;
   border: 1px solid #eee;
@@ -81,6 +95,7 @@ section {
   margin-top: 20px;
 }
 
+/* ボタン */
 .btn {
   background: #0077cc;
   color: white;
@@ -88,6 +103,18 @@ section {
   text-decoration: none;
 }
 
+/* フェード */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* フッター */
 footer {
   text-align: center;
   padding: 40px;
