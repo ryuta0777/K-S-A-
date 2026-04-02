@@ -192,3 +192,18 @@ footer {
     padding-top: 20px;
   }
 }
+.hero h1 {
+  font-size: 36px;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
