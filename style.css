@@ -224,3 +224,51 @@ button {
   border: none;
   cursor: pointer;
 }
+/* ===== 全体をワンランク上に ===== */
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+}
+
+/* ボタン強化 */
+.btn {
+  background: linear-gradient(135deg, #0077cc, #00aaff);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* カード強化 */
+.card {
+  border-radius: 12px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* フェード強化 */
+.fade {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: 0.6s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #f5f5f5;
+  margin-top: 50px;
+}
