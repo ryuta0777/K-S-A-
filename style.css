@@ -154,3 +154,41 @@ footer {
   padding: 40px;
   background: #f5f5f5;
 }
+/* ===== 会社概要テーブル ===== */
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.company-table th {
+  width: 30%;
+  text-align: left;
+  padding: 15px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.company-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.company-table tr:hover {
+  background: #fafafa;
+}
+
+/* スマホ対応 */
+@media(max-width:768px){
+  .company-table th,
+  .company-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .company-table th {
+    background: none;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+}
