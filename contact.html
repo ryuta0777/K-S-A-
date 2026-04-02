@@ -10,12 +10,17 @@
 <body>
 
 <nav>
-<a href="index.html">ホーム</a>
-<a href="about.html">会社概要</a>
-<a href="service.html">サービス</a>
-<a href="properties.html">物件情報</a>
-<a href="access.html">アクセス</a>
-<a href="contact.html">お問い合わせ</a>
+  <div class="logo">K,S,A</div>
+  <div class="menu-btn" onclick="toggleMenu()" id="menuBtn">☰</div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" onclick="toggleMenu()">ホーム</a>
+    <a href="about.html" onclick="toggleMenu()">会社概要</a>
+    <a href="service.html" onclick="toggleMenu()">サービス</a>
+    <a href="properties.html" onclick="toggleMenu()">物件情報</a>
+    <a href="access.html" onclick="toggleMenu()">アクセス</a>
+    <a href="contact.html" onclick="toggleMenu()">お問い合わせ</a>
+  </div>
 </nav>
 
 <section>
@@ -40,14 +45,45 @@ MAIL：ksa-1200@titan.ocn.ne.jp
 <footer>© 株式会社K,S,A</footer>
 
 <script>
+// フェード
 const els=document.querySelectorAll('.fade');
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')})});
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting) x.target.classList.add('show')
+  })
+});
 els.forEach(el=>obs.observe(el));
 
+// ナビ影
 window.addEventListener('scroll',()=>{
-const nav=document.querySelector('nav');
-if(window.scrollY>50){nav.classList.add('scrolled')}
-else{nav.classList.remove('scrolled')}
+  const nav=document.querySelector('nav');
+  if(window.scrollY>50){nav.classList.add('scrolled')}
+  else{nav.classList.remove('scrolled')}
+});
+
+// メニュー
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  const btn = document.getElementById("menuBtn");
+
+  nav.classList.toggle("active");
+
+  if(nav.classList.contains("active")){
+    btn.innerHTML = "×";
+  } else {
+    btn.innerHTML = "☰";
+  }
+}
+
+// 外クリック
+document.addEventListener("click", function(e){
+  const nav = document.getElementById("navLinks");
+  const btn = document.getElementById("menuBtn");
+
+  if (!nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove("active");
+    btn.innerHTML = "☰";
+  }
 });
 </script>
 
