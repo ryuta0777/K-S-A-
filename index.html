@@ -73,8 +73,10 @@ window.addEventListener('scroll',()=>{
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   const btn = document.getElementById("menuBtn");
+  const overlay = document.getElementById("overlay");
 
   nav.classList.toggle("active");
+  overlay.classList.toggle("active");
 
   if(nav.classList.contains("active")){
     btn.innerHTML = "×";
@@ -87,9 +89,11 @@ function toggleMenu() {
 document.addEventListener("click", function(e){
   const nav = document.getElementById("navLinks");
   const btn = document.getElementById("menuBtn");
+  const overlay = document.getElementById("overlay");
 
   if (!nav.contains(e.target) && !btn.contains(e.target)) {
     nav.classList.remove("active");
+    overlay.classList.remove("active");
     btn.innerHTML = "☰";
   }
 });
