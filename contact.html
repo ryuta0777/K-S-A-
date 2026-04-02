@@ -65,8 +65,10 @@ window.addEventListener('scroll',()=>{
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   const btn = document.getElementById("menuBtn");
+  const overlay = document.getElementById("overlay");
 
   nav.classList.toggle("active");
+  overlay.classList.toggle("active");
 
   if(nav.classList.contains("active")){
     btn.innerHTML = "×";
