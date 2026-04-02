@@ -28,7 +28,9 @@
 
 <div class="card fade">
 
-<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdlPHnnFzsfwa-EYAdwla_xqPB7gLaCOfFEfops5VItIBx4Dg/formResponse" method="POST">
+<form id="contactForm"
+action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdlPHnnFzsfwa-EYAdwla_xqPB7gLaCOfFEfops5VItIBx4Dg/formResponse"
+method="POST">
 
 <label>お名前</label>
 <input type="text" name="entry.1084380295" required>
@@ -44,8 +46,15 @@
 </form>
 
 </div>
-
 </section>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(){
+  setTimeout(function(){
+    window.location.href = "thanks.html";
+  }, 500);
+});
+</script>
 
 <footer>© 株式会社K,S,A</footer>
 
