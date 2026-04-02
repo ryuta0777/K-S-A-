@@ -3,119 +3,93 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #ffffff;
   color: #333;
-  letter-spacing: 0.05em;
 }
 
-/* ナビ */
+/* ナビ全体 */
 nav {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #ddd;
+  z-index: 1000;
 }
-nav.scrolled {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-nav a {
-  color: #555;
-  text-decoration: none;
+
+/* ロゴ */
+.logo {
   font-weight: bold;
 }
-nav a:hover {
-  color: #0077cc;
-}
 
-/* ヒーロー画像 */
-.hero {
-  position: relative;
-  height: 70vh;
-  background: url("images/hero.jpg") center/cover no-repeat;
+/* メニュー */
+.nav-links {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 25px;
 }
 
-/* 白フィルター */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.6);
+.nav-links a {
+  text-decoration: none;
+  color: #333;
 }
 
-/* テキスト */
-.hero-content {
-  position: relative;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 40px;
-}
-.hero p {
-  color: #555;
+/* ハンバーガー */
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-/* セクション */
+/* スマホ */
+@media(max-width:768px){
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 80px 20px;
+    gap: 20px;
+    transition: 0.3s;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+}
+
+/* その他そのまま */
 section {
   max-width: 1000px;
   margin: 80px auto;
   padding: 0 20px;
 }
 
-/* 見出し */
-h1, h2 {
-  letter-spacing: 0.08em;
-}
-
-/* カード */
 .card {
   background: #fff;
   border: 1px solid #eee;
   padding: 25px;
   border-radius: 10px;
   margin-top: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* ボタン */
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
   background: #0077cc;
   color: white;
+  padding: 12px 20px;
   text-decoration: none;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: #005fa3;
 }
 
-/* フェード */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s;
-}
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* フッター */
 footer {
   text-align: center;
   padding: 40px;
   background: #f5f5f5;
-  color: #777;
-}
-
-/* スマホ */
-@media(max-width:768px){
-  nav {flex-direction:column;}
 }
