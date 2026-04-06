@@ -291,3 +291,20 @@ footer {
     display: block;
   }
 }
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero h1 {
+  text-align: center;
+  line-height: 1.4;
+}
